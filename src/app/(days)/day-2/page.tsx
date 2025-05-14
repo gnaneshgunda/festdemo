@@ -4,7 +4,7 @@ import "../../styles/day-0.css"; // Adjust the path as necessary
 
 
 export default function Day2() {
-  const [activeEvent, setActiveEvent] = useState(null);
+const [activeEvent, setActiveEvent] = useState<number | null>(null);
   
   const events = [
     { 

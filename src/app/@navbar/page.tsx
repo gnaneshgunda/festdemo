@@ -60,12 +60,12 @@
 import "../styles/navbar1.css";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 
 export default function Navbar() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-  const router = useRouter();
+  // const router = useRouter();
   
   // Check login status when the component mounts
   useEffect(() => {

@@ -1,0 +1,27 @@
+#schedule-container{
+    min-height:85vh;
+    background-image:url("https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif");
+    color:white;
+    width:98vw;
+}
+
+.days-btn{
+    width:100%;
+    /* max-width:200px; */
+
+    display:flex;
+    justify-content:center;
+    button{
+        margin-right:5vw;
+        margin-top:3vh;
+        border-radius:10px;
+        background-color:black;
+        color:white;
+        font-size:1rem;
+      padding-right:10px;
+      padding-left:10px;
+    }
+}
+.schedule{
+    max-width:98vw;
+}

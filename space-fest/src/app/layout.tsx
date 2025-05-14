@@ -27,7 +27,7 @@ export const metadata = {
             <header>
               {navbar}
             </header>
-            <main style={{position:'relative',top:'12vh'}}>{children}</main>
+            <main style={{position:'relative',top:'10vh'}}>{children}</main>
             </body>
       </html>
     );

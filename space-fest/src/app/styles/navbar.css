@@ -16,7 +16,7 @@
     position:fixed;
     z-index: 1000;
     width:98vw;
-    height:13vh;
+    height:15vh;
 
 
 }
@@ -33,14 +33,14 @@
     font-size: 18px;
 }
 
-a {
+#navbar-links a {
     text-decoration: none; /* Remove default underline */
     position: relative;
     display: inline-block; /* Needed for transform to work on inline elements */
     transition: transform 0.6s ease; /* Smooth transition for scaling */
   }
   
-  a::after {
+ #navbar-links a::after {
     content: ''; /* Create a pseudo-element */
     position: absolute;
     bottom: 0;
@@ -51,11 +51,11 @@ a {
     transition: width 0.6s ease, height 0.6s ease; /* Slow transition for both width and height */
   }
   
-  a:hover {
+ a:hover {
     transform: scale(1.10); /* Increase the size of the anchor by 1.05 times */
   }
   
-  a:hover::after {
+ #navbar-links a:hover::after {
     width: 100%; /* Underline width grows on hover */
     height: 2px * 1.05; /* Increase the height by 1.05 times on hover */
   }

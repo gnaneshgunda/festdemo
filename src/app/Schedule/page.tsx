@@ -6,7 +6,9 @@ import Day1 from "../(days)/day-1/page";
 import Day2 from "../(days)/day-2/page";
 
 export default function Schedule() {
-    const [activeEvent, setActiveEvent] = useState(null);
+    // const [activeEvent, setActiveEvent] = useState(null);
+    const [activeEvent, setActiveEvent] = useState<number | null>(null);
+
     const days=[0,1,2]
     return (
         <div id="schedule-container">

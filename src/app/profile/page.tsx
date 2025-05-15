@@ -94,7 +94,7 @@ export default function Profile() {
     setIsEditing(!isEditing);
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setEditData({
       ...editData,
@@ -151,9 +151,9 @@ export default function Profile() {
                 <label>Bio</label>
                 <textarea
                   name="bio"
-                  value={editData.bio}
+                  value={editData.bio} 
                   onChange={handleChange}
-                  rows="3"
+                  rows={3}
                 ></textarea>
               </div>
             </form>

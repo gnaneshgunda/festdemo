@@ -33,46 +33,81 @@ export default function Login() {
   });
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+  
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
   };
+type Customer = {
+  email: string;
+  password: string;
+  username: string;
+};
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setError("");
+const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setError("");
 
-    // Basic validation
-    if (!formData.email || !formData.password) {
-      setError("Please fill in all fields");
-      return;
-    }
+  if (!formData.email || !formData.password) {
+    setError("Please fill in all fields");
+    return;
+  }
 
-    // In a real app, you would validate credentials with a backend
-    // This is a simple simulation
+  const existingCustomers: Customer[] = JSON.parse(
+    localStorage.getItem("existingCustomers") || "[]"
+  );
+
+  const customer = existingCustomers.find(
+    (cust) => cust.email === formData.email && cust.password === formData.password
+  );
+
+  if (!customer) {
+    setError("Invalid email or password");
+    return;
+  }
+
+  localStorage.setItem("userLoggedIn", "true");
+  localStorage.setItem("userEmail", formData.email);
+  localStorage.setItem("userName", customer.username);
+
+  router.replace("/profile");
+};
+
+  // const handleSubmit = (e: MouseEvent) => {
+  //   e.preventDefault();
+  //   setError("");
+
+  //   // Basic validation
+  //   if (!formData.email || !formData.password) {
+  //     setError("Please fill in all fields");
+  //     return;
+  //   }
+
+  //   // In a real app, you would validate credentials with a backend
+  //   // This is a simple simulation
     
-    let user=""
-    const existingCustomers = JSON.parse(localStorage.getItem("existingCustomers") || "[]");
+  //   let user=""
+  //   const existingCustomers = JSON.parse(localStorage.getItem("existingCustomers") || "[]");
 
-    const customer = existingCustomers.find(
-      (cust) => ((cust.email === formData.email && cust.password === formData.password))
-    );
+  //   const customer = existingCustomers.find(
+  //     (cust) => ((cust.email === formData.email && cust.password === formData.password))
+  //   );
 
-    if (!customer) {
-      setError("Invalid email or password");
-      return;
-    }
-   user=customer.username 
-    localStorage.setItem("userLoggedIn", "true");
-    localStorage.setItem("userEmail", formData.email);
-    localStorage.setItem("userName", user);
-    // Redirect to profile page
-    // router.push("/profile");
-    router.replace("/profile");
-  };
+  //   if (!customer) {
+  //     setError("Invalid email or password");
+  //     return;
+  //   }
+  //  user=customer.username 
+  //   localStorage.setItem("userLoggedIn", "true");
+  //   localStorage.setItem("userEmail", formData.email);
+  //   localStorage.setItem("userName", user);
+  //   // Redirect to profile page
+  //   // router.push("/profile");
+  //   router.replace("/profile");
+  // };
 
   return (
     <div className="auth-container">

@@ -91,29 +91,53 @@ export default function Navbar() {
   };
 
   // Close menu when clicking outside
+  // useEffect(() => {
+  //   const handleClickOutside = (e: React.MouseEvent) => {
+  //     if (menuOpen && !e.target.closest('#mobile-navbar-links') && !e.target.closest('.hamburger-menu')) {
+  //       setMenuOpen(false);
+  //     }
+  //   };
+    
+  //   document.addEventListener('mousedown', handleClickOutside);
+    
+  //   // Add escape key handler
+  //   const handleEscape = (e: React.MouseEvent<HTMLButtonElement>) => {
+  //     if (e.key === 'Escape') {
+  //       setMenuOpen(false);
+  //     }
+  //   };
+    
+  //   document.addEventListener('keydown', handleEscape);
+    
+  //   return () => {
+  //     document.removeEventListener('mousedown', handleClickOutside);
+  //     document.removeEventListener('keydown', handleEscape);
+  //   };
+  // }, [menuOpen]);
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (menuOpen && !e.target.closest('#mobile-navbar-links') && !e.target.closest('.hamburger-menu')) {
-        setMenuOpen(false);
-      }
-    };
-    
-    document.addEventListener('mousedown', handleClickOutside);
-    
-    // Add escape key handler
-    const handleEscape = (e) => {
-      if (e.key === 'Escape') {
-        setMenuOpen(false);
-      }
-    };
-    
-    document.addEventListener('keydown', handleEscape);
-    
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscape);
-    };
-  }, [menuOpen]);
+  const handleClickOutside = (e: MouseEvent) => {
+    const target = e.target as HTMLElement;
+    if (menuOpen && !target.closest('#mobile-navbar-links') && !target.closest('.hamburger-menu')) {
+      setMenuOpen(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setMenuOpen(false);
+    }
+  };
+
+  document.addEventListener('keydown', handleEscape);
+
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+    document.removeEventListener('keydown', handleEscape);
+  };
+}, [menuOpen]);
+
 
   return (
     <nav id="navbar">

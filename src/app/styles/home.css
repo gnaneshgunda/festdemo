@@ -133,3 +133,11 @@ a:hover {
       
   }
 }
+@media (max-width: 768px) {
+
+  #rocket-launch{
+    bottom:20vh;
+    width:80vw;
+    height:50vh;
+  }
+}

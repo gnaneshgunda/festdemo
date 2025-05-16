@@ -29,7 +29,7 @@ const Home= () => {
                     </a>
                 </div>
                 <div id="rocket-launch">
-                  <p> A space-ship waiting for you....</p>
+                  <p> A spacecraft awaits your imminent embarkation....</p>
                 </div>
 
 

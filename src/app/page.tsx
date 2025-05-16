@@ -5,7 +5,8 @@ const Home= () => {
         <div id="home">
             <div style={{height:"2vh"}}></div>
             <div id="home-content">
-                <h1>Welcome to the Asia's largest Astro-tech fest</h1>   
+                
+                <h1>Welcome to the Asia&apos;s largest Astro-tech fest</h1>   
                 <Link href="/Schedule" className="links" >explore Events</Link>
                 <br/>
                 <Link href="/signup" className="links">Register Now</Link>

@@ -1,0 +1,135 @@
+#home{
+    min-height:90vh;
+    width:100vw;
+    background-image:url("https://cdn.pixabay.com/animation/2023/03/19/02/34/02-34-11-741_512.gif");
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+#home-content{
+    margin-top:10vh;
+     background-image:url("/rocket.gif"); 
+     background-size:contain;
+     background-repeat: no-repeat;
+    color:white;
+    min-height:40vh;
+    h1{
+          background: linear-gradient(to right, 
+    #00ffff,  /* Cyan */
+    #ff00ff,  /* Magenta */
+    #00ffff   /* Back to cyan for a smooth loop */
+  );
+  
+  /* Make the background only show through the text */
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Make the text transparent so the background shows through */
+  color: transparent;
+  
+  /* Optional: Add a subtle text shadow for extra pop */
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+  
+  /* Optional: Make the text stand out more */
+  font-weight: bold;
+    }
+   /* a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    background: linear-gradient(to right, 
+    #00ffff,
+    #ff00ff,  
+    #00ffff   );
+    margin-bottom:8vh;
+    width:100%;
+    text-align:center;
+   } */
+.links {
+  /* Text styling */
+  text-decoration: none;
+  color: transparent; /* Make text transparent for gradient to show */
+  font-size: 1.2rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius:10px;
+  
+  /* Gradient styling */
+  background: linear-gradient(to right, 
+    #00ffff,  /* Cyan */
+    #ff00ff,  /* Magenta */
+    #00ffff   /* Back to cyan */
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  
+  /* Box model & positioning */
+
+  padding: 12px 24px;
+  
+  /* For centering the link itself */
+  display: block;
+  width: fit-content; /* Only as wide as the content */
+  margin-left: auto;
+  margin-right: auto;
+  
+  /* Optional enhancements */
+  border: 2px solid transparent;
+  border-image: linear-gradient(to right, #00ffff, #ff00ff, #00ffff);
+  border-image-slice: 1;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+a:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+  background: linear-gradient(to right, 
+    #ff00ff,  /* Start with magenta */
+    #00ffff,  /* To cyan */
+    #ff00ff   /* Back to magenta - reversed colors on hover */
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+}
+
+.social-icons {
+  display: flex;
+  position:fixed;
+  bottom:2vh;
+  left:5vw; 
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 5vh; /* Space from bottom */
+ 
+}
+
+.social-icons a {
+  color: white; /* Plain white color */
+  font-size: 32px; /* Larger size */
+  transition: transform 0.2s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2); /* Simple scale effect on hover */
+}
+
+#rocket-launch{
+  position:fixed;
+  bottom:2vh;
+  width:40vw;
+  height:30vh;
+  right:20vw;
+  background-image:url("https://bestanimations.com/Sci-Fi/UFOs/ufo-flying-saucer-animated-gif-image-11.gif");
+  background-size:contain;
+  background-repeat:no-repeat;
+  p{
+    color:white;
+    font-size:2rem;
+    text-align:bottom;
+    margin-top:10vh;
+      
+  }
+}
